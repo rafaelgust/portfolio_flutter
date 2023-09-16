@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ProjectView extends StatefulWidget {
-  const ProjectView({super.key});
+  final String? id;
+  const ProjectView({super.key, this.id});
 
   @override
   State<ProjectView> createState() => _ProjectViewState();

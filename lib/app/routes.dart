@@ -25,13 +25,24 @@ class AppRouter {
       GoRoute(
         path: '/projects',
         builder: (context, state) {
-          final id = state.pathParameters['id'];
-          print(id);
           return DeferredRoute(
             project_view.loadLibrary,
             () => project_view.ProjectView(),
           );
         },
+        routes: [
+          GoRoute(
+            path: 'item/:id',
+            builder: (context, state) {
+              return DeferredRoute(
+                project_view.loadLibrary,
+                () => project_view.ProjectView(
+                  id: state.pathParameters["id"],
+                ),
+              );
+            },
+          ),
+        ],
       ),
     ],
   );
