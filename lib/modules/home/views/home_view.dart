@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/utils/responsive_widget.dart';
 
-import '../widgets/nav/nav_bar.dart';
+import '../responsive/header/header_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -18,42 +18,52 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(
-            height: 80,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text('Rafael Gust'),
-                NavBar(scrollController: scrollController),
-              ],
-            ),
-          ),
+          HeaderView(controller: scrollController),
           Expanded(
             child: ListView(
               controller: scrollController,
               children: [
                 const SizedBox(
-                  key: GlobalObjectKey('top'),
+                  key: GlobalObjectKey('0'),
                 ),
                 ResponsiveWidget(
-                  key: const GlobalObjectKey('about_me'),
-                  mobile: Container(height: 150, color: Colors.green),
-                  tablet: Container(height: 150, color: Colors.blue),
-                  desktop: Container(height: 150, color: Colors.pink),
+                  key: const GlobalObjectKey('1'),
+                  mobile: Container(height: 500, color: Colors.grey),
+                  tablet: Container(height: 500, color: Colors.grey),
+                  desktop: Container(height: 500, color: Colors.grey),
                 ),
                 Container(
-                  key: const GlobalObjectKey('projects'),
-                  height: 150,
-                  color: Colors.blue,
-                ),
-                Container(
-                    key: const GlobalObjectKey('contact'),
-                    height: 500,
-                    color: Colors.red),
-                Container(
-                  key: const GlobalObjectKey('about_me2'),
+                  key: const GlobalObjectKey('2'),
                   height: 900,
-                  color: Colors.orange,
+                ),
+                Container(
+                  key: const GlobalObjectKey('3'),
+                  height: 500,
+                  color: Colors.grey,
+                ),
+                const SizedBox(
+                  height: 100,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Copyright © 2023 @Rafael Gust',
+                        style: TextStyle(
+                          fontFamily: 'RobotoMono',
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        'Built with Flutter',
+                        style: TextStyle(
+                          fontFamily: 'RobotoMono',
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ],
             ),

@@ -24,27 +24,22 @@ class NavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 60,
-      color: Colors.blue,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           NavItem(
             title: 'Início',
-            onTap: () => scrollToWidget('top'),
-          ),
-          NavItem(
-            title: 'Sobre Mim',
-            onTap: () => scrollToWidget('about_me'),
+            onTap: () => scrollToWidget('0'),
           ),
           NavItem(
             title: 'Projetos',
-            onTap: () => scrollToWidget('projects'),
+            onTap: () => scrollToWidget('2'),
           ),
           NavItem(
             title: 'Contato',
-            onTap: () => scrollToWidget('contact'),
+            onTap: () => scrollToWidget('3'),
           ),
         ],
       ),

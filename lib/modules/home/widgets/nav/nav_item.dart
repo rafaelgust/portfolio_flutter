@@ -8,15 +8,19 @@ class NavItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => onTap(),
-      child: Container(
-        padding: const EdgeInsets.all(5.0),
-        margin: const EdgeInsets.symmetric(horizontal: 10.0),
-        child: Text(
-          title,
-          style: const TextStyle(
-            color: Colors.white,
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 10.0),
+      child: InkWell(
+        onTap: () => onTap(),
+        child: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: Text(
+            title,
+            style: const TextStyle(
+              fontFamily: 'RobotoMono',
+              fontSize: 12,
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ),
       ),

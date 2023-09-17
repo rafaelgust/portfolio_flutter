@@ -13,8 +13,11 @@ class DeferredRoute extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done) {
           return buildChild();
         } else {
-          return const Center(
-            child: CircularProgressIndicator(),
+          return Container(
+            color: Colors.black,
+            child: const Center(
+              child: CircularProgressIndicator(),
+            ),
           );
         }
       }),
