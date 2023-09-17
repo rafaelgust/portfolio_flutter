@@ -16,9 +16,7 @@ class AppRouter {
         builder: (context, state) {
           return DeferredRoute(
             home_view.loadLibrary,
-            () => home_view.MyHomePage(
-              title: 'Home',
-            ),
+            () => home_view.HomeView(),
           );
         },
       ),
