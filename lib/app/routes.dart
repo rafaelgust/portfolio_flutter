@@ -4,7 +4,6 @@ import '../core/utils/deferred_route.dart';
 
 import '../core/widgets/error_view.dart';
 import '../modules/home/views/home_view.dart' deferred as home_view;
-import '../modules/home/views/project_view.dart' deferred as project_view;
 
 class AppRouter {
   static final GoRouter router = GoRouter(
@@ -20,7 +19,7 @@ class AppRouter {
           );
         },
       ),
-      GoRoute(
+      /* GoRoute(
         path: '/projects',
         builder: (context, state) {
           return DeferredRoute(
@@ -41,7 +40,7 @@ class AppRouter {
             },
           ),
         ],
-      ),
+      ), */
     ],
   );
 }

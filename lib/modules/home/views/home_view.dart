@@ -11,29 +11,53 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  final scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
+      body: Column(
         children: [
-          const SizedBox(
+          SizedBox(
             height: 80,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Rafael Gust'),
-                NavBar(),
+                const Text('Rafael Gust'),
+                NavBar(scrollController: scrollController),
               ],
             ),
           ),
-          ResponsiveWidget(
-            mobile: Container(height: 150, color: Colors.green),
-            tablet: Container(height: 150, color: Colors.blue),
-            desktop: Container(height: 150, color: Colors.pink),
+          Expanded(
+            child: ListView(
+              controller: scrollController,
+              children: [
+                const SizedBox(
+                  key: GlobalObjectKey('top'),
+                ),
+                ResponsiveWidget(
+                  key: const GlobalObjectKey('about_me'),
+                  mobile: Container(height: 150, color: Colors.green),
+                  tablet: Container(height: 150, color: Colors.blue),
+                  desktop: Container(height: 150, color: Colors.pink),
+                ),
+                Container(
+                  key: const GlobalObjectKey('projects'),
+                  height: 150,
+                  color: Colors.blue,
+                ),
+                Container(
+                    key: const GlobalObjectKey('contact'),
+                    height: 500,
+                    color: Colors.red),
+                Container(
+                  key: const GlobalObjectKey('about_me2'),
+                  height: 900,
+                  color: Colors.orange,
+                ),
+              ],
+            ),
           ),
-          Container(height: 150, color: Colors.blue),
-          Container(height: 500, color: Colors.red),
-          Container(height: 900, color: Colors.orange),
         ],
       ),
     );
