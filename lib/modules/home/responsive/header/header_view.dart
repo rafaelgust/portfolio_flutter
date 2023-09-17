@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/utils/responsive_widget.dart';
+import 'package:portfolio/core/widgets/change_theme.dart';
 
 import '../../widgets/nav/nav_bar.dart';
 
@@ -24,10 +25,10 @@ class HeaderView extends StatelessWidget {
       height: 140,
       child: Column(
         children: [
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(
+              const SizedBox(
                 width: 80,
                 height: 60,
                 child: Center(
@@ -41,18 +42,7 @@ class HeaderView extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                width: 60,
-                height: 80,
-                child: Center(
-                  child: Text(
-                    'RG',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
+              ChangeTheme(),
             ],
           ),
           NavBar(scrollController: controller),
@@ -81,17 +71,7 @@ class HeaderView extends StatelessWidget {
             ),
           ),
           NavBar(scrollController: controller),
-          const SizedBox(
-            width: 80,
-            child: Center(
-              child: Text(
-                'RG',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
+          ChangeTheme(),
         ],
       ),
     );
@@ -116,17 +96,9 @@ class HeaderView extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(
-            width: 80,
-            child: Center(
-              child: Text(
-                'RG',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
+          const Spacer(),
+          ChangeTheme(),
+          const Spacer(),
           NavBar(scrollController: controller),
         ],
       ),
