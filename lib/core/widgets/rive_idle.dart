@@ -37,7 +37,7 @@ class _RiveIdleState extends State<RiveIdle> {
       height: widget.size,
       child: Center(
         child: rive.RiveAnimation.asset(
-          '/rive/${widget.path}.riv',
+          'assets/rive/${widget.path}.riv',
           controllers: [_controller],
         ),
       ),
