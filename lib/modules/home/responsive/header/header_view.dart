@@ -1,7 +1,7 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/utils/responsive_widget.dart';
 import 'package:portfolio/core/widgets/change_theme.dart';
+import 'package:portfolio/core/widgets/rive_idle.dart';
 
 import '../../widgets/nav/nav_bar.dart';
 
@@ -11,13 +11,13 @@ class HeaderView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveWidget(
-      mobile: mobile(),
-      tablet: tab(),
-      desktop: desk(),
+      mobile: mobile(context),
+      tablet: tab(context),
+      desktop: desk(context),
     );
   }
 
-  Widget mobile() {
+  Widget mobile(BuildContext context) {
     return SizedBox(
       height: 120,
       child: Column(
@@ -29,12 +29,12 @@ class HeaderView extends StatelessWidget {
                 width: 80,
                 height: 60,
                 child: Center(
-                  child: Text(
-                    'RG',
-                    style: TextStyle(
-                      fontFamily: 'RobotoMono',
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+                  child: Hero(
+                    tag: 'logo',
+                    child: RiveIdle(
+                      path: 'logo',
+                      animation: 'home',
+                      size: 120,
                     ),
                   ),
                 ),
@@ -48,27 +48,28 @@ class HeaderView extends StatelessWidget {
     );
   }
 
-  Widget desk() {
+  Widget desk(BuildContext context) {
     return SizedBox(
       height: 60,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SizedBox(
-            width: 250,
-            child: DefaultTextStyle(
-              textAlign: TextAlign.start,
-              style: const TextStyle(
-                fontFamily: 'RobotoMono',
-                fontWeight: FontWeight.bold,
-                fontSize: 24,
+          Container(
+            width: 80,
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.secondary.withOpacity(0.3),
+              borderRadius: const BorderRadius.only(
+                bottomRight: Radius.circular(25.0),
               ),
-              child: AnimatedTextKit(
-                isRepeatingAnimation: false,
-                animatedTexts: [
-                  TyperAnimatedText("Rafael Gust"),
-                  TyperAnimatedText("RG")
-                ],
+            ),
+            child: const Center(
+              child: Hero(
+                tag: 'logo',
+                child: RiveIdle(
+                  path: 'logo',
+                  animation: 'home',
+                  size: 120,
+                ),
               ),
             ),
           ),
@@ -79,7 +80,7 @@ class HeaderView extends StatelessWidget {
     );
   }
 
-  Widget tab() {
+  Widget tab(BuildContext context) {
     return SizedBox(
       height: 60,
       child: Row(

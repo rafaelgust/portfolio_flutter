@@ -21,6 +21,21 @@ class ChangeTheme extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(onPressed: change, icon: FaIcon(icon()));
+    return Container(
+      width: 80,
+      height: 60,
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.secondary.withOpacity(0.3),
+        borderRadius: const BorderRadius.only(
+          bottomLeft: Radius.circular(25.0),
+        ),
+      ),
+      child: Center(
+        child: IconButton(
+          onPressed: change,
+          icon: FaIcon(icon()),
+        ),
+      ),
+    );
   }
 }

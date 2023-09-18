@@ -12,6 +12,8 @@ class NavItem extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 10.0),
       child: InkWell(
         onTap: onTap,
+        borderRadius: BorderRadius.circular(10.0),
+        hoverColor: Theme.of(context).colorScheme.secondary.withOpacity(0.2),
         child: Padding(
           padding: const EdgeInsets.all(5.0),
           child: Text(

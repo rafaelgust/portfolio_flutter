@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio/core/utils/responsive_widget.dart';
 import 'package:portfolio/core/widgets/icon_button.dart';
 
 import '../responsive/about_me/about_me_view.dart';
@@ -35,11 +34,11 @@ class _HomeViewState extends State<HomeView> {
                     color: Colors.grey,
                     height: 900,
                   ),
-                  Container(
-                    key: const GlobalObjectKey(3),
+                  const SizedBox(
+                    key: GlobalObjectKey(3),
                     width: double.infinity,
                     height: 900,
-                    child: const Column(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconButtonLink(
