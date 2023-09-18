@@ -3,21 +3,15 @@ import 'package:flutter/material.dart';
 import 'nav_item.dart';
 
 class NavBar extends StatelessWidget {
-  final ScrollController scrollController;
-  const NavBar({super.key, required this.scrollController});
+  const NavBar({super.key});
 
-  scrollToWidget(String key) {
-    if (GlobalObjectKey(key).currentContext != null) {
+  scrollToWidget(int key) {
+    final targetContext = GlobalObjectKey(key).currentContext;
+    if (targetContext != null) {
       Scrollable.ensureVisible(
-        GlobalObjectKey(key).currentContext!,
-        curve: Curves.easeOut,
-        duration: const Duration(milliseconds: 500),
-      );
-    } else {
-      scrollController.animateTo(
-        scrollController.position.minScrollExtent,
-        curve: Curves.easeOut,
-        duration: const Duration(milliseconds: 500),
+        targetContext,
+        duration: const Duration(milliseconds: 400),
+        curve: Curves.easeInOut,
       );
     }
   }
@@ -31,15 +25,15 @@ class NavBar extends StatelessWidget {
         children: [
           NavItem(
             title: 'Início',
-            onTap: () => scrollToWidget('0'),
+            onTap: () => scrollToWidget(1),
           ),
           NavItem(
             title: 'Projetos',
-            onTap: () => scrollToWidget('2'),
+            onTap: () => scrollToWidget(2),
           ),
           NavItem(
             title: 'Contato',
-            onTap: () => scrollToWidget('3'),
+            onTap: () => scrollToWidget(3),
           ),
         ],
       ),

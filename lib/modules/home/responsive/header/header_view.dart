@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/utils/responsive_widget.dart';
 import 'package:portfolio/core/widgets/change_theme.dart';
@@ -5,11 +6,7 @@ import 'package:portfolio/core/widgets/change_theme.dart';
 import '../../widgets/nav/nav_bar.dart';
 
 class HeaderView extends StatelessWidget {
-  final ScrollController controller;
-  const HeaderView({
-    super.key,
-    required this.controller,
-  });
+  const HeaderView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +19,7 @@ class HeaderView extends StatelessWidget {
 
   Widget mobile() {
     return SizedBox(
-      height: 140,
+      height: 120,
       child: Column(
         children: [
           Row(
@@ -45,7 +42,7 @@ class HeaderView extends StatelessWidget {
               ChangeTheme(),
             ],
           ),
-          NavBar(scrollController: controller),
+          const NavBar(),
         ],
       ),
     );
@@ -57,20 +54,25 @@ class HeaderView extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const SizedBox(
-            width: 80,
-            child: Center(
-              child: Text(
-                'RG',
-                style: TextStyle(
-                  fontFamily: 'RobotoMono',
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
+          SizedBox(
+            width: 250,
+            child: DefaultTextStyle(
+              textAlign: TextAlign.start,
+              style: const TextStyle(
+                fontFamily: 'RobotoMono',
+                fontWeight: FontWeight.bold,
+                fontSize: 24,
+              ),
+              child: AnimatedTextKit(
+                isRepeatingAnimation: false,
+                animatedTexts: [
+                  TyperAnimatedText("Rafael Gust"),
+                  TyperAnimatedText("RG")
+                ],
               ),
             ),
           ),
-          NavBar(scrollController: controller),
+          const NavBar(),
           ChangeTheme(),
         ],
       ),
@@ -99,7 +101,7 @@ class HeaderView extends StatelessWidget {
           const Spacer(),
           ChangeTheme(),
           const Spacer(),
-          NavBar(scrollController: controller),
+          const NavBar(),
         ],
       ),
     );

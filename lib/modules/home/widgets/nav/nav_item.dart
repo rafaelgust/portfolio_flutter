@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 class NavItem extends StatelessWidget {
   final String title;
-  final Function onTap;
+  final void Function()? onTap;
 
-  const NavItem({super.key, required this.title, required this.onTap});
+  const NavItem({super.key, required this.title, this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 10.0),
       child: InkWell(
-        onTap: () => onTap(),
+        onTap: onTap,
         child: Padding(
           padding: const EdgeInsets.all(5.0),
           child: Text(
