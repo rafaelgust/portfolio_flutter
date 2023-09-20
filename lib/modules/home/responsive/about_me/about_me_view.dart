@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:localization/localization.dart';
 import 'package:portfolio/core/utils/responsive_widget.dart';
 
 import '../../widgets/window_content.dart';
@@ -55,7 +56,7 @@ class _AboutMeState extends State<AboutMe> {
                               child: AnimatedTextKit(
                                 isRepeatingAnimation: false,
                                 animatedTexts: [
-                                  TyperAnimatedText("Hi! I am"),
+                                  TyperAnimatedText('hi-my-name'.i18n()),
                                 ],
                               ),
                             ),
@@ -79,7 +80,7 @@ class _AboutMeState extends State<AboutMe> {
                             child: AnimatedTextKit(
                               isRepeatingAnimation: false,
                               animatedTexts: [
-                                TyperAnimatedText("Desenvolvedor")
+                                TyperAnimatedText('developer'.i18n()),
                               ],
                             ),
                           ),

@@ -9,13 +9,12 @@ class LangController extends ChangeNotifier {
 
   Locale locale = const Locale('pt', 'BR');
 
-  changeLocale(String? lang) async {
+  Future<void> changeLocale(String? lang) async {
     if (lang == "Português") {
       locale = const Locale('pt', 'BR');
     } else {
       locale = const Locale('en', 'US');
     }
-    await Future.delayed(const Duration(seconds: 2));
     notifyListeners();
   }
 }

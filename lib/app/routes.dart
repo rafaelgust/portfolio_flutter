@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 import '../core/utils/deferred_route.dart';
 
 import '../core/widgets/error_view.dart';
+import '../core/widgets/loading_view.dart';
+
 import '../modules/home/views/home_view.dart' deferred as home_view;
 
 class AppRouter {
@@ -18,6 +20,14 @@ class AppRouter {
             () => home_view.HomeView(),
           );
         },
+        routes: [
+          GoRoute(
+            path: 'wait',
+            builder: (context, state) {
+              return const LoadingPage();
+            },
+          ),
+        ],
       ),
       /* GoRoute(
         path: '/projects',
