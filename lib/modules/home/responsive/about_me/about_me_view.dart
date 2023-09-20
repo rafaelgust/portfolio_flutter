@@ -128,9 +128,8 @@ class _AboutMeState extends State<AboutMe> {
               ),
             ],
           ),
-          const SizedBox(height: 10),
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+            margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
             child: const WindowContent(
               width: 900,
               height: 400,
@@ -140,6 +139,7 @@ class _AboutMeState extends State<AboutMe> {
               ),
             ),
           ),
+          const SizedBox(height: 20),
         ],
       ),
     );

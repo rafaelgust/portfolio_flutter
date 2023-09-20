@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/utils/responsive_widget.dart';
 import 'package:portfolio/core/widgets/change_theme.dart';
-import 'package:portfolio/core/widgets/rive_idle.dart';
 
+import '../../widgets/logo_topbar.dart';
 import '../../widgets/nav/nav_bar.dart';
 
 class HeaderView extends StatelessWidget {
@@ -25,20 +25,7 @@ class HeaderView extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const SizedBox(
-                width: 80,
-                height: 60,
-                child: Center(
-                  child: Hero(
-                    tag: 'logo',
-                    child: RiveIdle(
-                      path: 'logo',
-                      animation: 'home',
-                      size: 120,
-                    ),
-                  ),
-                ),
-              ),
+              const LogoTopBar(),
               ChangeTheme(),
             ],
           ),
@@ -54,25 +41,7 @@ class HeaderView extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            width: 80,
-            decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.secondary.withOpacity(0.3),
-              borderRadius: const BorderRadius.only(
-                bottomRight: Radius.circular(25.0),
-              ),
-            ),
-            child: const Center(
-              child: Hero(
-                tag: 'logo',
-                child: RiveIdle(
-                  path: 'logo',
-                  animation: 'home',
-                  size: 120,
-                ),
-              ),
-            ),
-          ),
+          const LogoTopBar(),
           const NavBar(),
           ChangeTheme(),
         ],
@@ -82,27 +51,13 @@ class HeaderView extends StatelessWidget {
 
   Widget tab(BuildContext context) {
     return SizedBox(
-      height: 60,
+      height: 40,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const SizedBox(
-            width: 80,
-            child: Center(
-              child: Text(
-                'RG',
-                style: TextStyle(
-                  fontFamily: 'RobotoMono',
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
-          const Spacer(),
-          ChangeTheme(),
-          const Spacer(),
+          const LogoTopBar(),
           const NavBar(),
+          ChangeTheme(),
         ],
       ),
     );

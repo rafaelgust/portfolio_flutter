@@ -7,11 +7,11 @@ import '../modules/home/views/home_view.dart' deferred as home_view;
 
 class AppRouter {
   static final GoRouter router = GoRouter(
-    initialLocation: '/home',
+    initialLocation: '/',
     errorBuilder: (context, state) => ErrorPage(state.error!.message),
     routes: [
       GoRoute(
-        path: '/home',
+        path: '/',
         builder: (context, state) {
           return DeferredRoute(
             home_view.loadLibrary,

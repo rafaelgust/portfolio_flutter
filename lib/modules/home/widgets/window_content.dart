@@ -25,9 +25,8 @@ class _WindowContentState extends State<WindowContent> {
       child: Container(
         width: widget.width,
         height: widget.height,
-        decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.1),
-          borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

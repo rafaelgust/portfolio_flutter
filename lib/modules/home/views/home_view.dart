@@ -31,14 +31,39 @@ class _HomeViewState extends State<HomeView> {
                   ),
                   Container(
                     key: const GlobalObjectKey(2),
-                    color: Colors.grey,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Colors.transparent,
+                          Theme.of(context)
+                              .colorScheme
+                              .secondary
+                              .withOpacity(0.3),
+                        ],
+                      ),
+                    ),
                     height: 900,
                   ),
-                  const SizedBox(
-                    key: GlobalObjectKey(3),
+                  Container(
+                    key: const GlobalObjectKey(3),
                     width: double.infinity,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Theme.of(context)
+                              .colorScheme
+                              .secondary
+                              .withOpacity(0.3),
+                          Colors.transparent,
+                        ],
+                      ),
+                    ),
                     height: 900,
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconButtonLink(
