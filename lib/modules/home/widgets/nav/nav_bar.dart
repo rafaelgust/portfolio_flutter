@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:localization/localization.dart';
 
 import 'nav_item.dart';
 
@@ -24,15 +25,15 @@ class NavBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           NavItem(
-            title: 'Início',
+            title: 'me'.i18n(),
             onTap: () => scrollToWidget(1),
           ),
           NavItem(
-            title: 'Projetos',
+            title: 'projects'.i18n(),
             onTap: () => scrollToWidget(2),
           ),
           NavItem(
-            title: 'Contato',
+            title: 'contact'.i18n(),
             onTap: () => scrollToWidget(3),
           ),
         ],

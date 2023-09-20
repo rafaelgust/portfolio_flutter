@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ThemeChanger extends ChangeNotifier {
+class ThemeController extends ChangeNotifier {
   ThemeData? _themeData;
 
   final darkTheme = ThemeData.dark(
@@ -13,13 +13,14 @@ class ThemeChanger extends ChangeNotifier {
     ),
   );
 
-  ThemeChanger._privateConstructor() {
+  ThemeController._privateConstructor() {
     _themeData = lightTheme;
   }
 
-  static final ThemeChanger _instance = ThemeChanger._privateConstructor();
+  static final ThemeController _instance =
+      ThemeController._privateConstructor();
 
-  static ThemeChanger get instance => _instance;
+  static ThemeController get instance => _instance;
 
   getTheme() => _themeData;
 

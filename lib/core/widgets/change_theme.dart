@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio/core/utils/theme_changer.dart';
+import 'package:portfolio/core/controllers/theme_controller.dart';
 
 class ChangeTheme extends StatelessWidget {
   ChangeTheme({super.key});
 
-  final themeChanger = ThemeChanger.instance;
+  final themeChanger = ThemeController.instance;
 
   void change() {
     themeChanger.setTheme(themeChanger.getTheme() == themeChanger.lightTheme

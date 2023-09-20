@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/utils/responsive_widget.dart';
+import 'package:portfolio/core/widgets/change_lang.dart';
 import 'package:portfolio/core/widgets/change_theme.dart';
 
 import '../../widgets/logo_topbar.dart';
@@ -43,7 +44,12 @@ class HeaderView extends StatelessWidget {
         children: [
           const LogoTopBar(),
           const NavBar(),
-          ChangeTheme(),
+          Row(
+            children: [
+              ChangeLang(),
+              ChangeTheme(),
+            ],
+          ),
         ],
       ),
     );
