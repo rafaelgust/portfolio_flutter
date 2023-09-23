@@ -42,13 +42,23 @@ class HeaderView extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const LogoTopBar(),
+          const SizedBox(
+            width: 250,
+            child: Align(
+              alignment: Alignment.topLeft,
+              child: LogoTopBar(),
+            ),
+          ),
           const NavBar(),
-          Row(
-            children: [
-              ChangeLang(),
-              ChangeTheme(),
-            ],
+          SizedBox(
+            width: 250,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ChangeLang(),
+                ChangeTheme(),
+              ],
+            ),
           ),
         ],
       ),

@@ -5,6 +5,7 @@ class WindowContent extends StatefulWidget {
   final double height;
   final String title;
   final Widget content;
+
   const WindowContent({
     super.key,
     required this.width,
@@ -78,8 +79,8 @@ class _WindowContentState extends State<WindowContent> {
   }
 
   Widget _button({MaterialColor? color}) => Container(
-        width: 20,
-        height: 20,
+        width: 15,
+        height: 15,
         margin: const EdgeInsets.all(5.0),
         decoration: BoxDecoration(
           color: color,

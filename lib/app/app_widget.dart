@@ -5,6 +5,7 @@ import 'package:localization/localization.dart';
 import 'package:portfolio/app/routes.dart';
 import 'package:portfolio/core/controllers/lang_controller.dart';
 import 'package:portfolio/core/controllers/theme_controller.dart';
+import 'package:portfolio/core/utils/scroll_behavior.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -35,9 +36,10 @@ class MyApp extends StatelessWidget {
             GlobalCupertinoLocalizations.delegate,
             LocalJsonLocalization.delegate,
           ],
+          routerConfig: AppRouter.router,
           theme: themeController.getTheme(),
           debugShowCheckedModeBanner: false,
-          routerConfig: AppRouter.router,
+          scrollBehavior: MyCustomScrollBehavior(),
         );
       },
     );

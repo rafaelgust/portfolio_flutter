@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio/core/widgets/icon_button.dart';
 
 import '../responsive/about_me/about_me_view.dart';
+import '../responsive/contact/contact_view.dart';
 import '../responsive/header/header_view.dart';
+import '../responsive/projects/projects_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -39,48 +39,20 @@ class _HomeViewState extends State<HomeView> {
                           Colors.transparent,
                           Theme.of(context)
                               .colorScheme
-                              .secondary
-                              .withOpacity(0.3),
-                        ],
-                      ),
-                    ),
-                    height: 900,
-                  ),
-                  Container(
-                    key: const GlobalObjectKey(3),
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          Theme.of(context)
-                              .colorScheme
-                              .secondary
-                              .withOpacity(0.3),
+                              .primary
+                              .withOpacity(0.2),
                           Colors.transparent,
                         ],
                       ),
                     ),
+                    height: 700,
+                    child: const ProjectsView(),
+                  ),
+                  const SizedBox(
+                    key: GlobalObjectKey(3),
+                    width: double.infinity,
                     height: 900,
-                    child: const Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        IconButtonLink(
-                          icon: FontAwesomeIcons.instagram,
-                          url: 'https://www.instagram.com/gust.dev/',
-                        ),
-                        IconButtonLink(
-                          icon: FontAwesomeIcons.github,
-                          url: 'https://github.com/rafaelgust',
-                        ),
-                        IconButtonLink(
-                          icon: FontAwesomeIcons.youtube,
-                          url:
-                              'https://www.youtube.com/channel/UCVL-T_T_1iEsXu9OS6f_soQ',
-                        ),
-                      ],
-                    ),
+                    child: ContactView(),
                   ),
                   const SizedBox(
                     height: 100,

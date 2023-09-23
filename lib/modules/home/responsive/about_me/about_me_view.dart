@@ -38,6 +38,11 @@ class _AboutMeState extends State<AboutMe> {
                 height: 250,
                 child: Row(
                   children: [
+                    Container(
+                      width: 3,
+                      margin: const EdgeInsets.only(right: 10),
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
                     SizedBox(
                       width: 400.0,
                       child: Column(
@@ -114,10 +119,6 @@ class _AboutMeState extends State<AboutMe> {
                           ),
                         ],
                       ),
-                    ),
-                    Container(
-                      width: 3,
-                      color: Theme.of(context).colorScheme.secondary,
                     ),
                   ],
                 ),
