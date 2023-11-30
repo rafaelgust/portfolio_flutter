@@ -138,7 +138,10 @@ class _AboutMeState extends State<AboutMe> {
                           width: 300.0,
                           height: 300.0,
                           clockwise: false,
-                          color: Theme.of(context).colorScheme.secondary,
+                          color: Theme.of(context)
+                              .colorScheme
+                              .secondary
+                              .withOpacity(0.5),
                           duration: const Duration(seconds: 5),
                         ),
                       ),
@@ -152,7 +155,10 @@ class _AboutMeState extends State<AboutMe> {
                         child: AnimatedRotatedRoundedTriangle(
                           width: 300.0,
                           height: 300.0,
-                          color: Theme.of(context).colorScheme.secondary,
+                          color: Theme.of(context)
+                              .colorScheme
+                              .secondary
+                              .withOpacity(0.5),
                           duration: const Duration(seconds: 5),
                         ),
                       ),
