@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:localization/localization.dart';
 import 'package:portfolio/core/utils/responsive_widget.dart';
 
+import '../../widgets/rounded_triangle.dart';
 import '../../widgets/window_content.dart';
 
 class AboutMe extends StatefulWidget {
@@ -27,7 +28,7 @@ class _AboutMeState extends State<AboutMe> {
   }
 
   Widget desk() {
-    return SizedBox(
+    return Center(
       child: Column(
         children: [
           Row(
@@ -123,11 +124,43 @@ class _AboutMeState extends State<AboutMe> {
                   ],
                 ),
               ),
-              const Image(
-                image: NetworkImage(
-                    'https://images.unsplash.com/photo-1549692520-acc6669e2f0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80'),
-                height: 300,
-              ),
+              Align(
+                alignment: Alignment.center,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      child: Center(
+                        child: AnimatedRotatedRoundedTriangle(
+                          width: 300.0,
+                          height: 300.0,
+                          color: Theme.of(context).colorScheme.secondary,
+                          duration: const Duration(seconds: 5),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      child: ClipOval(
+                        child: SizedBox(
+                          width: 300,
+                          height: 300,
+                          child: Center(
+                            child: Image.network(
+                              'https://images.unsplash.com/photo-1549692520-acc6669e2f0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80', // Substitua pela URL da sua imagem
+                              width: 450,
+                              height: 450,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
           Container(

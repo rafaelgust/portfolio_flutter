@@ -23,12 +23,8 @@ class _HomeViewState extends State<HomeView> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  const SizedBox(
-                    key: GlobalObjectKey(1),
-                  ),
-                  const AboutMe(
-                    key: GlobalObjectKey(0),
-                  ),
+                  const SizedBox(key: GlobalObjectKey(1)),
+                  const AboutMe(key: GlobalObjectKey(0)),
                   Container(
                     key: const GlobalObjectKey(2),
                     decoration: BoxDecoration(
