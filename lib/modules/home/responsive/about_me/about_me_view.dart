@@ -137,8 +137,38 @@ class _AboutMeState extends State<AboutMe> {
                         child: AnimatedRotatedRoundedTriangle(
                           width: 300.0,
                           height: 300.0,
+                          clockwise: false,
                           color: Theme.of(context).colorScheme.secondary,
                           duration: const Duration(seconds: 5),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      child: Center(
+                        child: AnimatedRotatedRoundedTriangle(
+                          width: 300.0,
+                          height: 300.0,
+                          color: Theme.of(context).colorScheme.secondary,
+                          duration: const Duration(seconds: 5),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      child: Center(
+                        child: AnimatedRotatedRoundedTriangle(
+                          width: 250.0,
+                          height: 250.0,
+                          clockwise: false,
+                          color: Theme.of(context).colorScheme.primary,
+                          duration: const Duration(seconds: 10),
                         ),
                       ),
                     ),

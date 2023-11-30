@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
 
 class AnimatedRotatedRoundedTriangle extends StatefulWidget {
+  final Duration duration;
   final double width;
   final double height;
   final Color color;
-  final Duration duration;
+  final bool clockwise;
 
   const AnimatedRotatedRoundedTriangle({
     super.key,
+    required this.duration,
     required this.width,
     required this.height,
     required this.color,
-    required this.duration,
+    this.clockwise = true,
   });
 
   @override
-  State<AnimatedRotatedRoundedTriangle> createState() =>
-      _AnimatedRotatedRoundedTriangleState();
+  AnimatedRotatedRoundedTriangleState createState() =>
+      AnimatedRotatedRoundedTriangleState();
 }
 
-class _AnimatedRotatedRoundedTriangleState
+class AnimatedRotatedRoundedTriangleState
     extends State<AnimatedRotatedRoundedTriangle>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
@@ -39,28 +41,19 @@ class _AnimatedRotatedRoundedTriangleState
       animation: _controller,
       builder: (BuildContext context, Widget? child) {
         return Transform.rotate(
-          angle: _controller.value * 2 * 3.14159265359,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(25.0),
-            child: SizedBox(
-              width: widget.width,
-              height: widget.height,
-              child: CustomPaint(
-                painter: TrianglePainter(
-                  color: widget.color,
-                ),
-              ),
+          angle: (widget.clockwise ? 1 : -1) *
+              _controller.value *
+              2 *
+              3.14159265359,
+          child: CustomPaint(
+            size: Size(widget.width, widget.height),
+            painter: TrianglePainter(
+              color: widget.color,
             ),
           ),
         );
       },
     );
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
   }
 }
 
