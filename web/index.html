@@ -46,14 +46,11 @@
   <div class="loader"></div>
   <script>
     window.addEventListener('load', function(ev) {
-      var loading = document.querySelector('.bottom');
-      loading.textContent = "Loading...";
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         },
         onEntrypointLoaded: function(engineInitializer) {
-          loading.textContent = "Initializing...";
           engineInitializer.initializeEngine().then(function(appRunner) {
             document.querySelector('#loading').remove;
             appRunner.runApp();
