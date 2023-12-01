@@ -5,6 +5,7 @@ import 'package:portfolio/core/utils/responsive_widget.dart';
 
 import '../../widgets/rounded_triangle.dart';
 import '../../widgets/window_content.dart';
+import 'carousel.dart';
 
 class AboutMe extends StatefulWidget {
   const AboutMe({super.key});
@@ -31,6 +32,7 @@ class _AboutMeState extends State<AboutMe> {
     return Center(
       child: Column(
         children: [
+          const SizedBox(height: 40),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -199,6 +201,8 @@ class _AboutMeState extends State<AboutMe> {
               )
             ],
           ),
+          const SizedBox(height: 40),
+          const Carousel(),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
             child: const WindowContent(
@@ -214,9 +218,5 @@ class _AboutMeState extends State<AboutMe> {
         ],
       ),
     );
-  }
-
-  Widget tab() {
-    return Container();
   }
 }
