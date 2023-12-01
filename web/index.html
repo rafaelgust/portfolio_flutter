@@ -40,6 +40,9 @@
       100% { transform: rotate(360deg); }
     }
   </style>
+  <script>
+    const serviceWorkerVersion = null;
+  </script>
   <script src="flutter.js" defer></script>
 </head>
 <body>
@@ -52,7 +55,6 @@
         },
         onEntrypointLoaded: function(engineInitializer) {
           engineInitializer.initializeEngine().then(function(appRunner) {
-            document.querySelector('#loading').remove;
             appRunner.runApp();
           });
         }
