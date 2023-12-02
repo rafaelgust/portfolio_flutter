@@ -5,7 +5,7 @@ import '../core/utils/deferred_route.dart';
 import '../core/widgets/error_view.dart';
 import '../core/widgets/loading_view.dart';
 
-import '../modules/home/views/home_view.dart' deferred as home_view;
+import '../modules/home/screens/home_screen.dart' deferred as home_screen;
 
 class AppRouter {
   static final GoRouter router = GoRouter(
@@ -16,8 +16,8 @@ class AppRouter {
         path: '/',
         builder: (context, state) {
           return DeferredRoute(
-            home_view.loadLibrary,
-            () => home_view.HomeView(),
+            home_screen.loadLibrary,
+            () => home_screen.HomeScreen(),
           );
         },
         routes: [

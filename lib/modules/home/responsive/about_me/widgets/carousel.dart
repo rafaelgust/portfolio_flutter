@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -22,18 +23,21 @@ class _CarouselState extends State<Carousel> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 150,
-      child: CarouselSlider.builder(
-        itemCount: icons.length,
-        itemBuilder: (context, index, realIdx) {
-          return Icon(icons[index], size: 50);
-        },
-        options: CarouselOptions(
-          autoPlay: true,
-          enlargeCenterPage: true,
-          viewportFraction: 1.0 / icons.length,
+    return Center(
+      child: Container(
+        width: MediaQuery.of(context).size.width - 50,
+        height: 150,
+        margin: const EdgeInsets.symmetric(vertical: 5.0),
+        child: CarouselSlider.builder(
+          itemCount: icons.length,
+          itemBuilder: (context, index, realIdx) {
+            return Icon(icons[index], size: 50);
+          },
+          options: CarouselOptions(
+            autoPlay: true,
+            enlargeCenterPage: true,
+            viewportFraction: 1.0 / icons.length,
+          ),
         ),
       ),
     );

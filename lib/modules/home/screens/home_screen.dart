@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-import '../responsive/about_me/about_me_view.dart';
-import '../responsive/contact/contact_view.dart';
 import '../responsive/header/header_view.dart';
 import '../responsive/projects/projects_view.dart';
+import '../views/about_me_view.dart';
+import '../views/contact_view.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _HomeScreenState extends State<HomeScreen> {
   final ScrollController _scrollController = ScrollController();
   bool _isScrollingDown = false;
   double _lastScrollOffset = 0.0;
@@ -48,7 +48,7 @@ class _HomeViewState extends State<HomeView> {
           children: [
             const HeaderView(),
             const SizedBox(key: GlobalObjectKey(1)),
-            const AboutMe(key: GlobalObjectKey(0)),
+            const AboutMeView(key: GlobalObjectKey(0)),
             Container(
               key: const GlobalObjectKey(2),
               decoration: BoxDecoration(
