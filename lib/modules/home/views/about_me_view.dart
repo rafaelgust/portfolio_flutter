@@ -139,7 +139,7 @@ class _AboutMeState extends State<AboutMeView> {
                       ),
                     ),
                   ),
-                  Positioned(
+                  const Positioned(
                     child: MyImage(),
                   ),
                 ],
@@ -148,7 +148,8 @@ class _AboutMeState extends State<AboutMeView> {
           ],
         ),
         const SizedBox(height: 40),
-        Carousel(),
+        const Carousel(),
+        const SizedBox(height: 20),
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
           child: WindowContent(

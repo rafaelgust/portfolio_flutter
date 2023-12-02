@@ -36,6 +36,15 @@ flutter:
   assets:
     - lib/core/i18n/
     - assets/rive/logo.riv
+    - assets/images/csharp.png
+    - assets/images/dart.png
+    - assets/images/flutter.png
+    - assets/images/java.png
+    - assets/images/js.png
+    - assets/images/rust.png
+    - assets/images/mysql.png
+    - assets/images/mongo.png
+    - assets/images/postgresql.png
   
   fonts:
     - family: RobotoMono
