@@ -92,34 +92,6 @@ class _AboutMeState extends State<AboutMe> {
                               ],
                             ),
                           ),
-                          DefaultTextStyle(
-                            textAlign: TextAlign.start,
-                            style: const TextStyle(
-                              fontFamily: 'RobotoMono',
-                              color: Colors.blue,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 12,
-                            ),
-                            child: AnimatedTextKit(
-                              isRepeatingAnimation: false,
-                              animatedTexts: [
-                                TyperAnimatedText("Dart - Flutter")
-                              ],
-                            ),
-                          ),
-                          DefaultTextStyle(
-                            textAlign: TextAlign.start,
-                            style: const TextStyle(
-                              color: Colors.red,
-                              fontFamily: 'RobotoMono',
-                              fontWeight: FontWeight.w500,
-                              fontSize: 12,
-                            ),
-                            child: AnimatedTextKit(
-                              isRepeatingAnimation: false,
-                              animatedTexts: [TyperAnimatedText("Java")],
-                            ),
-                          ),
                         ],
                       ),
                     ),
@@ -205,11 +177,11 @@ class _AboutMeState extends State<AboutMe> {
           const Carousel(),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-            child: const WindowContent(
+            child: WindowContent(
               width: 900,
               height: 400,
-              title: 'Sobre mim',
-              content: Center(
+              title: 'about-me'.i18n(),
+              content: const Center(
                 child: Text('dsad'),
               ),
             ),
