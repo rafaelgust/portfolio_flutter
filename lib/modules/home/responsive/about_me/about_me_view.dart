@@ -5,7 +5,8 @@ import 'package:portfolio/core/utils/responsive_widget.dart';
 
 import '../../widgets/rounded_triangle.dart';
 import '../../widgets/window_content.dart';
-import 'carousel.dart';
+import 'widgets/carousel.dart';
+import 'widgets/my_image.dart';
 
 class AboutMe extends StatefulWidget {
   const AboutMe({super.key});
@@ -152,21 +153,8 @@ class _AboutMeState extends State<AboutMe> {
                         ),
                       ),
                     ),
-                    Positioned(
-                      child: ClipOval(
-                        child: SizedBox(
-                          width: 300,
-                          height: 300,
-                          child: Center(
-                            child: Image.network(
-                              'https://images.unsplash.com/photo-1549692520-acc6669e2f0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80', // Substitua pela URL da sua imagem
-                              width: 450,
-                              height: 450,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                      ),
+                    const Positioned(
+                      child: MyImage(),
                     ),
                   ],
                 ),
